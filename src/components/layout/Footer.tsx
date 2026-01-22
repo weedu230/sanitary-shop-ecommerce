@@ -11,15 +11,15 @@ export const Footer = () => {
           <div className="space-y-4">
             <div className="flex items-center gap-2">
               <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-primary-foreground/10">
-                <span className="text-xl">🚿</span>
+                <span className="text-xl">🔧</span>
               </div>
               <div>
-                <h3 className="font-display text-lg font-bold">Usman Sanitary</h3>
-                <p className="text-xs text-primary-foreground/70">Est. 1995</p>
+                <h3 className="font-display text-lg font-bold">Usman Hardware</h3>
+                <p className="text-xs text-primary-foreground/70">Since 2015</p>
               </div>
             </div>
             <p className="text-sm text-primary-foreground/80">
-              Your trusted partner for quality bathroom fittings, plumbing supplies, and sanitary solutions in Pakistan.
+              Your trusted partner for quality hardware supplies. Serving retail and wholesale customers across Pakistan.
             </p>
             <div className="flex gap-3">
               <a
@@ -116,7 +116,7 @@ export const Footer = () => {
         {/* Bottom */}
         <div className="mt-12 border-t border-primary-foreground/10 pt-6">
           <p className="text-center text-sm text-primary-foreground/60">
-            © {new Date().getFullYear()} Usman Sanitary Store. All rights reserved.
+            © {new Date().getFullYear()} Usman Hardware. All rights reserved. | Wholesale & Retail
           </p>
         </div>
       </div>
