@@ -14,11 +14,11 @@ export const CTASection = () => {
       <div className="container relative">
         <div className="mx-auto max-w-3xl text-center">
           <h2 className="mb-4 font-display text-3xl font-bold text-primary-foreground md:text-4xl lg:text-5xl">
-            Ready to Transform Your Bathroom?
+            Ready to Start Your Project?
           </h2>
           <p className="mb-8 text-lg text-primary-foreground/80">
-            Get in touch with us today for the best prices on quality sanitary fittings. 
-            We're here to help you find the perfect products for your home.
+            Get in touch with us today for the best prices on quality hardware supplies. 
+            We're here to help you find the right products for your needs.
           </p>
 
           {/* CTAs */}

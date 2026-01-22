@@ -1,8 +1,18 @@
-import { Phone, Mail, MapPin, Clock, MessageCircle } from 'lucide-react';
+import { Phone, Mail, MapPin, Clock, MessageCircle, ExternalLink } from 'lucide-react';
 import { Layout } from '@/components/layout/Layout';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { phoneNumber, whatsappNumber, storeAddress, storeEmail } from '@/data/products';
+
+const businessHours = [
+  { day: 'Monday', hours: '9:00 AM - 9:00 PM' },
+  { day: 'Tuesday', hours: '9:00 AM - 9:00 PM' },
+  { day: 'Wednesday', hours: '9:00 AM - 9:00 PM' },
+  { day: 'Thursday', hours: '9:00 AM - 9:00 PM' },
+  { day: 'Friday', hours: '9:00 AM - 9:00 PM' },
+  { day: 'Saturday', hours: '9:00 AM - 9:00 PM' },
+  { day: 'Sunday', hours: 'Closed' },
+];
 
 const Contact = () => {
   return (
@@ -15,144 +25,155 @@ const Contact = () => {
               Contact <span className="text-gradient">Us</span>
             </h1>
             <p className="text-lg text-muted-foreground">
-              Get in touch for inquiries, orders, or technical support. We're here to help!
+              Have questions? We're here to help! Reach out to us via WhatsApp, phone, or visit our store.
             </p>
           </div>
         </div>
       </section>
 
+      {/* Get in Touch */}
       <section className="py-16 md:py-24">
         <div className="container">
+          <h2 className="mb-8 text-center font-display text-2xl font-bold text-foreground">
+            Get in Touch
+          </h2>
+          
+          {/* Contact Cards Grid */}
+          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4 mb-12">
+            {/* Phone */}
+            <Card className="border-border">
+              <CardContent className="p-6 text-center">
+                <div className="mb-4 mx-auto flex h-12 w-12 items-center justify-center rounded-xl bg-primary/10 text-primary">
+                  <Phone className="h-6 w-6" />
+                </div>
+                <h3 className="mb-1 font-semibold text-foreground">Phone</h3>
+                <p className="mb-4 text-sm text-muted-foreground">{phoneNumber}</p>
+                <Button asChild variant="outline" className="w-full">
+                  <a href={`tel:${phoneNumber}`}>Call Now</a>
+                </Button>
+              </CardContent>
+            </Card>
+
+            {/* WhatsApp */}
+            <Card className="border-border">
+              <CardContent className="p-6 text-center">
+                <div className="mb-4 mx-auto flex h-12 w-12 items-center justify-center rounded-xl bg-whatsapp/10 text-whatsapp">
+                  <MessageCircle className="h-6 w-6" />
+                </div>
+                <h3 className="mb-1 font-semibold text-foreground">WhatsApp</h3>
+                <p className="mb-4 text-sm text-muted-foreground">{phoneNumber}</p>
+                <Button asChild className="w-full bg-whatsapp hover:bg-whatsapp/90">
+                  <a href={`https://wa.me/${whatsappNumber}`} target="_blank" rel="noopener noreferrer">
+                    Chat Now
+                  </a>
+                </Button>
+              </CardContent>
+            </Card>
+
+            {/* Email */}
+            <Card className="border-border">
+              <CardContent className="p-6 text-center">
+                <div className="mb-4 mx-auto flex h-12 w-12 items-center justify-center rounded-xl bg-primary/10 text-primary">
+                  <Mail className="h-6 w-6" />
+                </div>
+                <h3 className="mb-1 font-semibold text-foreground">Email</h3>
+                <p className="mb-4 text-sm text-muted-foreground">{storeEmail}</p>
+                <Button asChild variant="outline" className="w-full">
+                  <a href={`mailto:${storeEmail}`}>Send Email</a>
+                </Button>
+              </CardContent>
+            </Card>
+
+            {/* Address */}
+            <Card className="border-border">
+              <CardContent className="p-6 text-center">
+                <div className="mb-4 mx-auto flex h-12 w-12 items-center justify-center rounded-xl bg-primary/10 text-primary">
+                  <MapPin className="h-6 w-6" />
+                </div>
+                <h3 className="mb-1 font-semibold text-foreground">Address</h3>
+                <p className="mb-4 text-sm text-muted-foreground">{storeAddress}</p>
+                <Button asChild variant="outline" className="w-full gap-1">
+                  <a 
+                    href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(storeAddress)}`} 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                  >
+                    Get Directions
+                    <ExternalLink className="h-3 w-3" />
+                  </a>
+                </Button>
+              </CardContent>
+            </Card>
+          </div>
+
+          {/* Business Hours & WhatsApp CTA */}
           <div className="grid gap-8 lg:grid-cols-2">
-            {/* Contact Info */}
-            <div className="space-y-6">
-              <div>
-                <h2 className="mb-6 font-display text-2xl font-bold text-foreground">
-                  Get in Touch
-                </h2>
-                <p className="text-muted-foreground mb-8">
-                  Have questions about our products or need a quote? Contact us via WhatsApp for 
-                  the fastest response, or give us a call during business hours.
-                </p>
-              </div>
-
-              {/* Contact Cards */}
-              <div className="grid gap-4 sm:grid-cols-2">
-                <Card className="border-border">
-                  <CardContent className="p-6">
-                    <div className="mb-4 inline-flex h-12 w-12 items-center justify-center rounded-xl bg-whatsapp/10 text-whatsapp">
-                      <MessageCircle className="h-6 w-6" />
-                    </div>
-                    <h3 className="mb-1 font-semibold text-foreground">WhatsApp</h3>
-                    <p className="mb-4 text-sm text-muted-foreground">Fastest response time</p>
-                    <Button asChild className="w-full bg-whatsapp hover:bg-whatsapp/90">
-                      <a href={`https://wa.me/${whatsappNumber}`} target="_blank" rel="noopener noreferrer">
-                        Chat Now
-                      </a>
-                    </Button>
-                  </CardContent>
-                </Card>
-
-                <Card className="border-border">
-                  <CardContent className="p-6">
-                    <div className="mb-4 inline-flex h-12 w-12 items-center justify-center rounded-xl bg-primary/10 text-primary">
-                      <Phone className="h-6 w-6" />
-                    </div>
-                    <h3 className="mb-1 font-semibold text-foreground">Phone</h3>
-                    <p className="mb-4 text-sm text-muted-foreground">Mon-Sat, 9AM-9PM</p>
-                    <Button asChild variant="outline" className="w-full">
-                      <a href={`tel:${phoneNumber}`}>
-                        {phoneNumber}
-                      </a>
-                    </Button>
-                  </CardContent>
-                </Card>
-              </div>
-
-              {/* Additional Info */}
-              <div className="space-y-4 pt-4">
-                <div className="flex items-start gap-4">
-                  <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-secondary text-primary">
-                    <Mail className="h-5 w-5" />
-                  </div>
-                  <div>
-                    <p className="font-medium text-foreground">Email</p>
-                    <a href={`mailto:${storeEmail}`} className="text-sm text-muted-foreground hover:text-primary">
-                      {storeEmail}
-                    </a>
-                  </div>
-                </div>
-
-                <div className="flex items-start gap-4">
-                  <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-secondary text-primary">
-                    <MapPin className="h-5 w-5" />
-                  </div>
-                  <div>
-                    <p className="font-medium text-foreground">Store Address</p>
-                    <p className="text-sm text-muted-foreground">{storeAddress}</p>
-                  </div>
-                </div>
-
-                <div className="flex items-start gap-4">
-                  <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-secondary text-primary">
+            {/* Business Hours */}
+            <Card className="border-border">
+              <CardContent className="p-6">
+                <div className="flex items-center gap-3 mb-6">
+                  <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-primary/10 text-primary">
                     <Clock className="h-5 w-5" />
                   </div>
-                  <div>
-                    <p className="font-medium text-foreground">Business Hours</p>
-                    <p className="text-sm text-muted-foreground">Monday - Saturday: 9:00 AM - 9:00 PM</p>
-                    <p className="text-sm text-muted-foreground">Sunday: Closed</p>
-                  </div>
+                  <h3 className="font-display text-lg font-semibold text-foreground">Business Hours</h3>
                 </div>
-              </div>
-            </div>
+                <div className="space-y-3">
+                  {businessHours.map((item) => (
+                    <div key={item.day} className="flex justify-between text-sm">
+                      <span className="text-foreground font-medium">{item.day}</span>
+                      <span className={item.hours === 'Closed' ? 'text-destructive' : 'text-muted-foreground'}>
+                        {item.hours}
+                      </span>
+                    </div>
+                  ))}
+                </div>
+              </CardContent>
+            </Card>
 
-            {/* Map */}
-            <div className="overflow-hidden rounded-2xl border border-border bg-muted">
-              <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3620.1015024456846!2d67.0299!3d24.8607!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3eb33e06651d4bbf%3A0x9cf92f44555a0c2d!2sSaddar%2C%20Karachi%2C%20Pakistan!5e0!3m2!1sen!2s!4v1640000000000!5m2!1sen!2s"
-                width="100%"
-                height="100%"
-                style={{ border: 0, minHeight: '400px' }}
-                allowFullScreen
-                loading="lazy"
-                referrerPolicy="no-referrer-when-downgrade"
-                title="Store Location"
-              />
-            </div>
+            {/* WhatsApp CTA */}
+            <Card className="border-border bg-whatsapp/5">
+              <CardContent className="p-6 flex flex-col justify-center h-full">
+                <div className="flex items-center gap-3 mb-4">
+                  <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-whatsapp/10 text-whatsapp">
+                    <MessageCircle className="h-5 w-5" />
+                  </div>
+                  <h3 className="font-display text-lg font-semibold text-foreground">Chat with Us on WhatsApp</h3>
+                </div>
+                <p className="text-muted-foreground mb-6">
+                  Get instant responses to your questions. We're available during business hours to help you find the right products.
+                </p>
+                <Button asChild size="lg" className="bg-whatsapp hover:bg-whatsapp/90 w-full sm:w-auto">
+                  <a href={`https://wa.me/${whatsappNumber}`} target="_blank" rel="noopener noreferrer">
+                    <MessageCircle className="h-4 w-4 mr-2" />
+                    Start Chat
+                  </a>
+                </Button>
+              </CardContent>
+            </Card>
           </div>
         </div>
       </section>
 
-      {/* FAQ */}
-      <section className="border-t border-border bg-muted/30 py-16">
+      {/* Map */}
+      <section className="border-t border-border py-16">
         <div className="container">
           <h2 className="mb-8 text-center font-display text-2xl font-bold text-foreground">
-            Frequently Asked Questions
+            Find Our Store
           </h2>
-          <div className="mx-auto max-w-3xl space-y-4">
-            {[
-              {
-                q: 'How can I place an order?',
-                a: 'Simply browse our products and click "Order on WhatsApp" button. You can also call or visit our store directly.',
-              },
-              {
-                q: 'Do you deliver nationwide?',
-                a: 'Yes, we deliver to all major cities across Pakistan. Delivery charges vary by location.',
-              },
-              {
-                q: 'What payment methods do you accept?',
-                a: 'We accept cash on delivery, bank transfer, and easy paisa/jazzcash.',
-              },
-              {
-                q: 'Do you offer installation services?',
-                a: 'While we don\'t provide installation, we offer free technical guidance and can recommend trusted plumbers.',
-              },
-            ].map((faq) => (
-              <div key={faq.q} className="rounded-lg border border-border bg-card p-6">
-                <h3 className="mb-2 font-semibold text-foreground">{faq.q}</h3>
-                <p className="text-sm text-muted-foreground">{faq.a}</p>
-              </div>
-            ))}
+          <p className="mb-8 text-center text-muted-foreground">
+            Visit us in person at our Lahore location
+          </p>
+          <div className="overflow-hidden rounded-2xl border border-border bg-muted">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d217898.66854026916!2d74.1698!3d31.4826!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39190483e58107d9%3A0xc23abe6ccc7e2462!2sLahore%2C%20Punjab%2C%20Pakistan!5e0!3m2!1sen!2s!4v1640000000000!5m2!1sen!2s"
+              width="100%"
+              height="400"
+              style={{ border: 0 }}
+              allowFullScreen
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+              title="Store Location"
+            />
           </div>
         </div>
       </section>

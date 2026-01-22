@@ -342,7 +342,10 @@ export const getWhatsAppLink = (product: Product): string => {
   return `https://wa.me/923001234567?text=${message}`;
 };
 
-export const phoneNumber = '+92 300 1234567';
+export const phoneNumber = '+92 300 123 4567';
 export const whatsappNumber = '923001234567';
-export const storeAddress = 'Shop #15, Saddar Bazar, Karachi, Pakistan';
-export const storeEmail = 'info@usmansanitary.pk';
+export const storeAddress = 'Shop #12, Main Bazaar, Lahore, Pakistan';
+export const storeEmail = 'info@usmanhardware.pk';
+export const storeName = 'Usman Hardware';
+export const storeTagline = 'Quality • Trust • Service';
+export const establishedYear = 2015;

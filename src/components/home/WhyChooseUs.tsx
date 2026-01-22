@@ -3,8 +3,8 @@ import { ShieldCheck, Truck, BadgePercent, HeadphonesIcon, Wrench, Clock } from 
 const features = [
   {
     icon: ShieldCheck,
-    title: 'Genuine Products',
-    description: 'All our products are 100% authentic with manufacturer warranty.',
+    title: 'Quality Guaranteed',
+    description: 'We source only genuine, high-quality hardware products from trusted manufacturers.',
   },
   {
     icon: BadgePercent,
@@ -18,13 +18,13 @@ const features = [
   },
   {
     icon: HeadphonesIcon,
-    title: 'Expert Support',
-    description: '25+ years of experience to help you choose the right products.',
+    title: 'Customer First',
+    description: 'Your satisfaction is our priority. We\'re here to help you find the right products.',
   },
   {
     icon: Wrench,
-    title: 'Installation Guidance',
-    description: 'Free technical support and installation tips for all purchases.',
+    title: 'Expert Guidance',
+    description: 'Our experienced staff can help you find the right products for your specific needs.',
   },
   {
     icon: Clock,
@@ -40,10 +40,10 @@ export const WhyChooseUs = () => {
         {/* Header */}
         <div className="mb-12 text-center">
           <h2 className="mb-4 font-display text-3xl font-bold text-foreground md:text-4xl">
-            Why Choose Usman Sanitary?
+            Why Choose Usman Hardware?
           </h2>
           <p className="mx-auto max-w-2xl text-muted-foreground">
-            Trusted by thousands of customers across Pakistan for quality bathroom solutions.
+            What sets us apart from the rest
           </p>
         </div>
 
