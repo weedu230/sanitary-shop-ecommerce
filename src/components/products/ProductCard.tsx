@@ -1,7 +1,7 @@
 import { MessageCircle } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
-import { Product, formatPrice, getWhatsAppLink, categories } from '@/data/products';
+import { Product, formatPrice, getWhatsAppLink, categories, productImages } from '@/data/products';
 
 interface ProductCardProps {
   product: Product;
@@ -15,20 +15,35 @@ const getCategoryIcon = (categoryId: string): string => {
 
 export const ProductCard = ({ product }: ProductCardProps) => {
   const categoryIcon = getCategoryIcon(product.category);
+  const productImage = productImages[product.id];
 
   return (
     <Card className="group overflow-hidden border-border bg-card shadow-card transition-all duration-300 hover:shadow-card-hover hover:-translate-y-1">
-      {/* Product Image Placeholder with Category Icon */}
+      {/* Product Image */}
       <div className="relative aspect-square overflow-hidden bg-gradient-to-br from-secondary to-muted">
-        <div className="absolute inset-0 flex items-center justify-center">
-          <span className="text-6xl transition-transform group-hover:scale-110 group-hover:rotate-3">
-            {categoryIcon}
-          </span>
-        </div>
+        {productImage ? (
+          <img 
+            src={productImage} 
+            alt={product.name}
+            className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
+          />
+        ) : (
+          <div className="absolute inset-0 flex items-center justify-center">
+            <span className="text-6xl transition-transform group-hover:scale-110 group-hover:rotate-3">
+              {categoryIcon}
+            </span>
+          </div>
+        )}
         {/* Price Badge */}
         <div className="absolute right-3 top-3 rounded-lg bg-primary px-3 py-1.5 text-xs font-semibold text-primary-foreground shadow-md">
           {formatPrice(product.price)}
         </div>
+        {/* Featured Badge for products with images */}
+        {productImage && (
+          <div className="absolute left-3 top-3 rounded-lg bg-accent px-2 py-1 text-xs font-semibold text-accent-foreground shadow-md">
+            Featured
+          </div>
+        )}
       </div>
 
       <CardContent className="p-4">

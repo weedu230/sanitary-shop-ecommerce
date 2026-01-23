@@ -4,7 +4,33 @@ export interface Product {
   price: number;
   category: string;
   description: string;
+  image?: string;
 }
+
+// Product images for featured items
+import steamShowerUnit from '@/assets/products/steam-shower-unit.jpg';
+import jacuzziTub from '@/assets/products/jacuzzi-tub.jpg';
+import smartToilet from '@/assets/products/smart-toilet.jpg';
+import showerGlassCabin from '@/assets/products/shower-glass-cabin.jpg';
+import bathtubSteel from '@/assets/products/bathtub-steel.jpg';
+import stainlessWc from '@/assets/products/stainless-wc.jpg';
+import bathtubAcrylic from '@/assets/products/bathtub-acrylic.jpg';
+import undergroundTank from '@/assets/products/underground-tank.jpg';
+import gasGeyser from '@/assets/products/gas-geyser.jpg';
+import onePieceCommode from '@/assets/products/one-piece-commode.jpg';
+
+export const productImages: Record<number, string> = {
+  1: onePieceCommode,      // One Piece Commode - Rs 45,000
+  7: smartToilet,          // Smart Toilet - Rs 120,000
+  23: stainlessWc,         // Stainless WC - Rs 65,000
+  81: gasGeyser,           // Gas Geyser - Rs 45,000
+  82: bathtubAcrylic,      // Bathtub Acrylic - Rs 55,000
+  83: bathtubSteel,        // Bathtub Steel - Rs 75,000
+  84: jacuzziTub,          // Jacuzzi Tub - Rs 180,000
+  89: showerGlassCabin,    // Shower Glass Cabin - Rs 95,000
+  103: steamShowerUnit,    // Steam Shower Unit - Rs 210,000
+  183: undergroundTank,    // Underground Tank - Rs 55,000
+};
 
 export const categories = [
   { id: 'toilets', name: 'Toilets & WC', icon: '🚽', description: 'Complete range of commodes, flush systems & accessories' },
