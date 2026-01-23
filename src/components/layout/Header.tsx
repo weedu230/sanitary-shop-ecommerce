@@ -23,14 +23,14 @@ export const Header = () => {
         {/* Logo */}
         <Link to="/" className="flex items-center gap-2">
           <div className="flex h-10 w-10 items-center justify-center rounded-lg gradient-primary">
-            <span className="text-xl">🔧</span>
+            <span className="text-xl">🚿</span>
           </div>
           <div className="flex flex-col">
             <span className="font-display text-lg font-bold leading-tight text-foreground md:text-xl">
-              Usman Hardware
+              Usman Sanitary
             </span>
             <span className="hidden text-xs text-muted-foreground md:block">
-              Quality Hardware Since 2015
+              Quality Fittings Since 1999
             </span>
           </div>
         </Link>

@@ -10,10 +10,10 @@ const About = () => {
         <div className="container">
           <div className="mx-auto max-w-3xl text-center">
             <h1 className="mb-4 font-display text-4xl font-bold text-foreground md:text-5xl">
-              About <span className="text-gradient">Usman Hardware</span>
+              About <span className="text-gradient">Usman Sanitary</span>
             </h1>
             <p className="text-lg text-muted-foreground">
-              Building Trust Since 2015 - Your one-stop shop for quality hardware supplies.
+              Building Trust Since 1999 - Your one-stop shop for quality sanitary & bathroom fittings.
             </p>
           </div>
         </div>
@@ -30,18 +30,18 @@ const About = () => {
                 </h2>
                 <div className="space-y-4 text-muted-foreground">
                   <p>
-                    What started as a small hardware shop in Lahore has grown into a trusted destination 
-                    for professionals and DIY enthusiasts alike. Founded in 2015, Usman Hardware has been 
-                    committed to providing quality products at competitive prices.
+                    What started as a small sanitary shop in Lahore has grown into a trusted destination 
+                    for contractors, plumbers, and homeowners alike. Founded in 1999, Usman Sanitary Store has been 
+                    committed to providing quality bathroom fittings at competitive prices.
                   </p>
                   <p>
-                    Our journey began with a simple mission: to make quality hardware accessible to everyone. 
-                    Today, we stock over 500 products across 16 categories, serving thousands of customers 
+                    Our journey began with a simple mission: to make quality sanitary ware accessible to everyone. 
+                    Today, we stock over 300 products across 5 categories, serving thousands of customers 
                     across Pakistan.
                   </p>
                   <p>
-                    Whether you're a contractor working on a major project or a homeowner doing repairs, 
-                    we have the tools and materials you need. Our knowledgeable staff is always ready to 
+                    Whether you're building a new bathroom or renovating your kitchen, 
+                    we have the fittings and fixtures you need. Our knowledgeable staff is always ready to 
                     help you find the right product for your needs.
                   </p>
                 </div>
@@ -49,8 +49,8 @@ const About = () => {
               <div className="relative">
                 <div className="aspect-square rounded-2xl bg-secondary flex items-center justify-center">
                   <div className="text-center p-8">
-                    <span className="text-8xl block mb-4">🔧</span>
-                    <p className="font-display text-xl font-bold text-foreground">Usman Hardware</p>
+                    <span className="text-8xl block mb-4">🚿</span>
+                    <p className="font-display text-xl font-bold text-foreground">Usman Sanitary</p>
                     <p className="text-muted-foreground">Quality • Trust • Service</p>
                   </div>
                 </div>
@@ -65,10 +65,10 @@ const About = () => {
         <div className="container">
           <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
             {[
-              { icon: Target, value: '500+', label: 'Products' },
-              { icon: Clock, value: '9+', label: 'Years Experience' },
-              { icon: Users, value: '1,000+', label: 'Happy Customers' },
-              { icon: Award, value: '16', label: 'Categories' },
+              { icon: Target, value: '300+', label: 'Products' },
+              { icon: Clock, value: '25+', label: 'Years Experience' },
+              { icon: Users, value: '5,000+', label: 'Happy Customers' },
+              { icon: Award, value: '5', label: 'Categories' },
             ].map((stat) => (
               <div key={stat.label} className="text-center">
                 <div className="mb-4 inline-flex h-14 w-14 items-center justify-center rounded-xl bg-primary/10 text-primary">
@@ -100,7 +100,7 @@ const About = () => {
             {[
               {
                 title: 'Quality Guaranteed',
-                description: 'We source only genuine, high-quality hardware products from trusted manufacturers.',
+                description: 'We source only genuine, high-quality sanitary products from trusted manufacturers.',
               },
               {
                 title: 'Customer First',
@@ -108,7 +108,7 @@ const About = () => {
               },
               {
                 title: 'Expert Guidance',
-                description: 'Our experienced staff can help you find the right products for your specific needs.',
+                description: 'Our experienced staff can help you find the right bathroom fittings for your specific needs.',
               },
             ].map((value) => (
               <div key={value.title} className="rounded-2xl border border-border bg-card p-6">
