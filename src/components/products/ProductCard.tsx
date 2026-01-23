@@ -1,19 +1,29 @@
-import { MessageCircle, ShoppingBag } from 'lucide-react';
+import { MessageCircle } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
-import { Product, formatPrice, getWhatsAppLink } from '@/data/products';
+import { Product, formatPrice, getWhatsAppLink, categories } from '@/data/products';
 
 interface ProductCardProps {
   product: Product;
 }
 
+// Get category icon based on product category
+const getCategoryIcon = (categoryId: string): string => {
+  const category = categories.find(c => c.id === categoryId);
+  return category?.icon || '🛒';
+};
+
 export const ProductCard = ({ product }: ProductCardProps) => {
+  const categoryIcon = getCategoryIcon(product.category);
+
   return (
     <Card className="group overflow-hidden border-border bg-card shadow-card transition-all duration-300 hover:shadow-card-hover hover:-translate-y-1">
-      {/* Product Image Placeholder */}
-      <div className="relative aspect-square overflow-hidden bg-secondary">
+      {/* Product Image Placeholder with Category Icon */}
+      <div className="relative aspect-square overflow-hidden bg-gradient-to-br from-secondary to-muted">
         <div className="absolute inset-0 flex items-center justify-center">
-          <ShoppingBag className="h-16 w-16 text-muted-foreground/30 transition-transform group-hover:scale-110" />
+          <span className="text-6xl transition-transform group-hover:scale-110 group-hover:rotate-3">
+            {categoryIcon}
+          </span>
         </div>
         {/* Price Badge */}
         <div className="absolute right-3 top-3 rounded-lg bg-primary px-3 py-1.5 text-xs font-semibold text-primary-foreground shadow-md">
